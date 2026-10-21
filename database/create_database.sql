@@ -1,0 +1,7 @@
+IF DB_ID(N'OrchidJWTLab') IS NULL
+    CREATE DATABASE OrchidJWTLab;
+GO
+USE OrchidJWTLab;
+GO
+SELECT DB_NAME() AS current_db;
+GO
