@@ -1,0 +1,677 @@
+/**
+ * Author: Lê Quốc Duy
+ * Simple styles for FUMiniHotel
+ */
+
+/* 1. Cài đặt chung */
+:root {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: #f5f6f8;
+    font-synthesis: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+}
+
+a {
+    color: #1756a9;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.app-shell {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-shell main {
+    flex: 1;
+    padding: 25px 0;
+}
+
+/* 2. Thanh điều hướng */
+.topbar {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #17365d;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.brand-icon {
+    display: flex;
+}
+
+.brand-accent {
+    color: #2874c6;
+}
+
+.nav-links,
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: #333;
+    padding: 7px 0;
+}
+
+.nav-links a.active {
+    color: #1764b0;
+    font-weight: bold;
+}
+
+.user-chip {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+}
+
+/* 3. Nút bấm */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 1px solid #1d5fa7;
+    border-radius: 4px;
+    padding: 9px 14px;
+    font-weight: bold;
+    background: white;
+    color: #1d5fa7;
+}
+
+.btn-primary {
+    background: #1d5fa7;
+    color: white;
+}
+
+.btn-ghost,
+.btn-light {
+    background: white;
+    color: #1d5fa7;
+}
+
+.btn-small {
+    padding: 7px 10px;
+    font-size: 13px;
+}
+
+.btn-lg {
+    padding: 12px 18px;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+/* 4. Trang chủ và danh sách phòng */
+.hero {
+    background: #e8eef5;
+    padding: 65px 5%;
+    color: #17365d;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin: 12px 0;
+}
+
+.hero p {
+    line-height: 1.6;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.hero-note {
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+.eyebrow {
+    color: #2464a3;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.feature-strip {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+}
+
+.feature-strip > div {
+    padding: 10px;
+}
+
+.feature-strip small {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+}
+
+.section {
+    padding: 30px 0;
+}
+
+.section-heading,
+.row-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.section h2,
+.page-title h1 {
+    margin: 0 0 12px;
+    color: #17365d;
+}
+
+.text-link {
+    font-weight: bold;
+}
+
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.room-card,
+.panel,
+.booking-item,
+.stat-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 16px;
+}
+
+.room-art {
+    min-height: 130px;
+    background: #e5ebf1;
+    display: flex;
+    align-items: end;
+    padding: 12px;
+}
+
+.room-art-label,
+.tag {
+    background: #edf2f7;
+    color: #234d78;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+
+.room-card-body {
+    padding-top: 12px;
+}
+
+.room-card h3,
+.booking-item h3 {
+    margin: 10px 0;
+}
+
+.room-card p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.price {
+    color: #1764b0;
+    font-weight: bold;
+}
+
+.price small {
+    color: #666;
+    font-weight: normal;
+}
+
+.status {
+    color: #b54737;
+}
+
+.status-good {
+    color: #23834b;
+}
+
+.round-arrow {
+    display: inline-flex;
+    padding: 8px;
+    background: #edf2f7;
+}
+
+.page-section {
+    min-height: 60vh;
+}
+
+.page-title {
+    margin-bottom: 20px;
+}
+
+.page-title p,
+.muted {
+    color: #666;
+    font-size: 14px;
+}
+
+.filter-bar,
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.search-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+}
+
+.search-field input,
+.search-input {
+    width: 100%;
+    border: 0;
+    padding: 10px;
+}
+
+.filter-bar select,
+.modal select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: white;
+}
+
+.room-meta {
+    display: flex;
+    gap: 15px;
+    color: #666;
+    font-size: 13px;
+}
+
+/* 5. Đăng nhập và đăng ký */
+.auth-wrap {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.auth-aside {
+    background: #e8eef5;
+    color: #17365d;
+    padding: 30px;
+}
+
+.auth-aside h1 {
+    font-size: 32px;
+}
+
+.auth-card {
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 25px;
+}
+
+.auth-card h2,
+.modal h2 {
+    margin-top: 0;
+}
+
+.auth-card label,
+.modal label,
+.form-stack label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 12px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.auth-card input,
+.modal input,
+.form-stack input,
+.form-stack select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #ccc;
+    padding-left: 8px;
+}
+
+.input-icon input {
+    border: 0;
+}
+
+.auth-bottom {
+    text-align: center;
+    margin-top: 18px;
+}
+
+.register-wrap .auth-card {
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.narrow {
+    max-width: 700px;
+    margin: auto;
+}
+
+.form-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* 6. Thông báo và trạng thái */
+.alert {
+    padding: 10px;
+    margin: 12px 0;
+    border-radius: 4px;
+}
+
+.alert-error {
+    background: #fdebea;
+    color: #a12622;
+}
+
+.alert-success {
+    background: #e8f5eb;
+    color: #216b36;
+}
+
+.alert-info {
+    background: #eaf2fa;
+    color: #24527a;
+}
+
+.state,
+.empty-state {
+    padding: 25px;
+    text-align: center;
+    color: #666;
+}
+
+.state {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 7. Bảng dữ liệu quản trị */
+.table-wrap {
+    overflow-x: auto;
+    background: white;
+    border: 1px solid #ddd;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 11px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #edf2f7;
+}
+
+.table-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.icon-btn {
+    border: 1px solid #ccc;
+    background: white;
+    padding: 7px;
+}
+
+.icon-btn.danger {
+    color: #b12626;
+}
+
+/* 8. Dashboard và đặt phòng */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-card strong {
+    font-size: 28px;
+}
+
+.stat-icon {
+    color: #1d5fa7;
+}
+
+.admin-welcome {
+    margin-top: 20px;
+    padding: 20px;
+    background: #e8eef5;
+    color: #17365d;
+}
+
+.booking-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.detail-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.detail-chips span {
+    background: #edf2f7;
+    padding: 6px;
+    font-size: 12px;
+}
+
+/* 9. Hộp thoại */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: #0008;
+    display: grid;
+    place-items: center;
+    padding: 15px;
+    z-index: 10;
+}
+
+.modal {
+    width: 100%;
+    max-width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    padding: 22px;
+    border-radius: 5px;
+}
+
+.modal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-top: 1px solid #ddd;
+}
+
+/* 10. Chân trang */
+.footer {
+    background: #17365d;
+    color: white;
+    padding: 18px 0;
+    font-size: 13px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* 11. Giao diện trên điện thoại */
+@media (max-width: 750px) {
+    .topbar {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .room-grid,
+    .booking-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .room-grid,
+    .booking-list,
+    .auth-wrap,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-aside {
+        display: none;
+    }
+
+    .span-2 {
+        grid-column: auto;
+    }
+
+    .feature-strip {
+        flex-direction: column;
+    }
+
+    .filter-bar,
+    .toolbar,
+    .hero-actions {
+        flex-wrap: wrap;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+}
